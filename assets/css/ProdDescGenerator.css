@@ -1,0 +1,12 @@
+.title-input-group input:nth-of-type(2) {
+	width: 5%;
+}
+.title-input-group input:nth-of-type(3) {
+	width: 25%;
+}
+textarea.form-control {
+	line-height: 1.2
+}
+#flaws-reset {
+	border-color: #adb5bd;
+}
