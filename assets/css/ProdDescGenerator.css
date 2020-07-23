@@ -1,7 +1,4 @@
-.title-input-group input:nth-of-type(2) {
-	/*width: 5%;*/
-}
-.title-input-group input:nth-of-type(3) {
+.title-input-group input:nth-of-type(3), #flaws {
 	width: 30%;
 }
 textarea.form-control {

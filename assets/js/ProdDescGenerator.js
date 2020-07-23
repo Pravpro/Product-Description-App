@@ -69,7 +69,7 @@ $(document).on('change', 'input[name=recommended-size], input[name=recommended-g
 });
 
 $(document).on('click', '#flaws-reset', function() {
-	$("#flaws").val("none");
+	$("#flaws-group select").val("none");
 })
 
 function generateDescription(el) {
@@ -117,8 +117,17 @@ function getMeasurements() {
 }
 
 function getFlaws(){
-	if($("#flaws").val() != "none") { 
-		return "\n*" + $("#flaws").val() + ", please check additional picture(s) for more info"
+	var flawString = "";
+	var flawType = $("#flaw-type").val();
+	var flaw = $("#flaws").val();
+
+	if(flawType !== "none") { flawString += flawType + " "; }
+	if(flaw !== "none") { flawString += flaw + ", please check additional picture(s) for more info"; }
+	
+	if (flawString.length > 0) {
+		flawString = flawString.charAt(0) + flawString.slice(1).toLowerCase();
+		flawString = "\n*" + flawString;
 	}
-	return "";
+
+	return flawString;
 }

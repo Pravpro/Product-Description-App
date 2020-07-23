@@ -74,14 +74,17 @@
 					<div class="col-1">
 						<label for="flaws" class="lead mb-1">Flaws:</label>
 					</div>
-					<div class="col-4">
-						<div class="input-group">
+					<div class="col-5">
+						<div id="flaws-group" class="input-group">
+							<select id="flaw-type" class="custom-select">
+								<option selected value="none" hidden="true">Choose...</option>
+								<option>Very minor</option>
+								<option>Minor</option>
+							</select>
 							<select id="flaws" class="custom-select">
 								<option selected value="none" hidden="true">Choose...</option>
-								<option>Very minor signs of wear present</option>
-								<option>Minor signs of wear present</option>
-								<option>Very minor signs of fading present</option>
-								<option>Minor signs of fading present</option>
+								<option>Signs of wear present</option>
+								<option>Signs of fading present</option>
 							</select>
 							<div class="input-group-append">
 							    <button id="flaws-reset" class="btn btn-outline-secondary" type="button">Reset</button>
