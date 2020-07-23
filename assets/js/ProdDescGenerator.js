@@ -72,6 +72,11 @@ $(document).on('click', '#flaws-reset', function() {
 	$("#flaws-group select").val("none");
 })
 
+$(document).on('click', '#copy-btn', function(event) {
+	$("textarea").select();
+    document.execCommand('copy');
+});
+
 function generateDescription(el) {
 	var desc = "Title:" + getTitle() + "\n\nSize On Label: " + getSizeOnLabel() + 
 		"\n\nRecommended Size: " + getRecommendedSize() + "\n\nMeasurements:\n" + getMeasurements() + 
