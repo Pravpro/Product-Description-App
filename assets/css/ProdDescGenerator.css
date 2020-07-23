@@ -7,3 +7,7 @@ textarea.form-control {
 #flaws-reset {
 	border-color: #adb5bd;
 }
+#copy-btn {
+	position: absolute;
+	right: 5px;
+}
