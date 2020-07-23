@@ -5,8 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Bootstrap CSS, then Custom CSS -->
+	<!-- Bootstrap, then Fontawesome, then Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/fontawesome/all.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/ProdDescGenerator.css">
 
 	<title>Vibn Product Description Generator</title>
@@ -246,7 +247,7 @@
 					</div>
 					<div class="col-6">
 						<div class="form-group pt-2">
-							<button id="copy-btn" class="btn btn-outline-primary btn-sm" type="button">cpy</button>
+							<button id="copy-btn" class="btn btn-outline-primary btn-sm" type="button" data-toggle="popover" data-placement="top" data-content="Copy to clipboard" data-trigger="hover"><i class="far fa-copy"></i></button>
 							<textarea class="form-control" rows="13" placeholder="Where the generated text will show up"></textarea>
 						</div>
 					</div>
@@ -254,7 +255,6 @@
 
 			</form>
 		</section>
-
 		<section id="bottoms"></section>
 	</div>
 

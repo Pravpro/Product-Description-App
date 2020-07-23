@@ -30,6 +30,7 @@ $("input[name='type-selection']").change(function(){
 		$("#tops").html("");
 		$("#bottoms").html(bottomsForm);
 	}
+	$("#copy-btn").popover();
 });
 
 $(document).on("click", "#clear-btn", function(){
@@ -75,7 +76,13 @@ $(document).on('click', '#flaws-reset', function() {
 $(document).on('click', '#copy-btn', function(event) {
 	$("textarea").select();
     document.execCommand('copy');
+    $(".popover-body").text('Copied!');
+    $('#copy-btn').popover('update');
+
 });
+$(document).on('hidden.bs.popover', "#copy-btn", function () {
+	$("#copy-btn").attr("data-content", "Copy to clipboard");
+})
 
 function generateDescription(el) {
 	var desc = "Title:" + getTitle() + "\n\nSize On Label: " + getSizeOnLabel() + 

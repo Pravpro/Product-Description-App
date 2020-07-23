@@ -11,3 +11,17 @@ textarea.form-control {
 	position: absolute;
 	right: 5px;
 }
+.popover {
+	background-color: black;
+	border: none;
+}
+.popover-body {
+	padding: 0.25rem 0.5rem;
+	color: white;
+}
+.popover .arrow::after {
+	border-top-color: black;
+}
+.popover .arrow::before {
+	border-top-color: rgba(0,0,0,0);
+}
