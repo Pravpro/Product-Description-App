@@ -1,8 +1,8 @@
 .title-input-group input:nth-of-type(2) {
-	width: 5%;
+	/*width: 5%;*/
 }
 .title-input-group input:nth-of-type(3) {
-	width: 25%;
+	width: 30%;
 }
 textarea.form-control {
 	line-height: 1.2
