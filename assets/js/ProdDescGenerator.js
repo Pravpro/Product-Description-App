@@ -117,7 +117,8 @@ function getMeasurements() {
 }
 
 function getFlaws(){
-	if($("#flaws").val() !== "none") { 
+	if($("#flaws").val() != "none") { 
 		return "\n*" + $("#flaws").val() + ", please check additional picture(s) for more info"
 	}
+	return "";
 }
