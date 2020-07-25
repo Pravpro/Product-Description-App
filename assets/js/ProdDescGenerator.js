@@ -1,5 +1,8 @@
-var topsForm = $("#tops").html();
-var bottomsForm = $("#bottoms").html();
+var formHTML = $("#form").html();
+// Activate all popovers
+$(function () {
+	$('[data-toggle="popover"]').popover()
+});
 
 var genderMap = {
 	"female" : "Women's",
@@ -17,26 +20,13 @@ var sizeMap = {
 	"3xl" : "XXXL",
 }
 
-$("#tops").html("");
-$("#bottoms").html("");
-
 $("input[name='type-selection']").change(function(){
-	var radioValue = $("input[name='type-selection']:checked").val();
-	if (radioValue === "tops") {
-		$("#bottoms").html("");
-		$("#tops").html(topsForm);
-	}
-	else {
-		$("#tops").html("");
-		$("#bottoms").html(bottomsForm);
-	}
-	$("#copy-btn").popover();
+	setForm();
 });
 
 $(document).on("click", "#clear-btn", function(){
-	var radioValue = $("input[name='type-selection']:checked").val();
-	radioValue === "tops" ? $("#tops").html(topsForm) : $("#bottoms").html(bottomsForm);
-});;
+	setForm();
+});
 
 $(document).on('click', '#generate-btn', function(){
 	generateDescription($("textarea"));
@@ -82,7 +72,24 @@ $(document).on('click', '#copy-btn', function(event) {
 });
 $(document).on('hidden.bs.popover', "#copy-btn", function () {
 	$("#copy-btn").attr("data-content", "Copy to clipboard");
-})
+});
+
+function setForm() {
+	$("#form").html(formHTML); // Default form is setup for Tops
+	var measurement1Section = $("#measurement1-input-group");
+	var label = measurement1Section.find('label')
+	var inputSection = measurement1Section.find('>div')
+
+	var radioValue = $("input[name='type-selection']:checked").val();
+	if (radioValue === "bottoms") {
+		label.html("<strong>Waist:</strong>");
+		label.toggleClass('col-3 col-4');
+		inputSection.toggleClass('col-5 col-4');
+		measurement1Section.append('-' + '<div class="col-4">' + inputSection.html() + '</div>');
+	}
+	// Activate popovers
+	$('[data-toggle="popover"]').popover();
+}
 
 function generateDescription(el) {
 	var desc = "Title:" + getTitle() + "\n\nSize On Label: " + getSizeOnLabel() + 
@@ -125,7 +132,12 @@ function getSizeOnLabel() {
 }
 
 function getMeasurements() {
-	return "Pit-to-Pit: " + $("#pit-to-pit").val() + "\"\nLength: " + $("#length").val() + "\"";
+	m1String = "";
+	m1Inputs = $("#measurement1-input-group input");
+	m1String += m1Inputs.val() + "\"";
+	if(m1Inputs.length === 2 && m1Inputs[1].value !== "") m1String += " - " + m1Inputs[1].value + "\"";
+
+	return $("#measurement1-input-group label").text() + " " + m1String + "\nLength: " + $("#length").val() + "\"";
 }
 
 function getFlaws(){
