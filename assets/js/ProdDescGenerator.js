@@ -1,4 +1,5 @@
 var formHTML = $("#form").html();
+var flawsSection = $("#flaws-group").html();
 // Activate all popovers
 $(function () {
 	$('[data-toggle="popover"]').popover()
@@ -32,6 +33,10 @@ $(document).on('click', '#generate-btn', function(){
 	generateDescription($("textarea"));
 });
 
+$(document).on('keyup', '#flaws', function(){
+	($(this).val() !== "") ? $("#flaws-append-text").prop("disabled", false) : $("#flaws-append-text").prop("disabled", true)
+});
+
 $(document).on('change', '#same-size', function(){
 	// Need to fill this
 	// Select the same options as size on label
@@ -60,7 +65,7 @@ $(document).on('change', 'input[name=recommended-size], input[name=recommended-g
 });
 
 $(document).on('click', '#flaws-reset', function() {
-	$("#flaws-group select").val("none");
+	$("#flaws-group").html(flawsSection);
 })
 
 $(document).on('click', '#copy-btn', function(event) {
@@ -146,7 +151,7 @@ function getFlaws(){
 	var flaw = $("#flaws").val();
 
 	if(flawType !== "none") { flawString += flawType + " "; }
-	if(flaw !== "none") { flawString += flaw + ", please check additional picture(s) for more info"; }
+	if(flaw !== "") { flawString += flaw + ", please check additional picture(s) for more info"; }
 	
 	if (flawString.length > 0) {
 		flawString = flawString.charAt(0) + flawString.slice(1).toLowerCase();
