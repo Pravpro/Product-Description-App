@@ -151,10 +151,13 @@ function getFlaws(){
 	var flaw = $("#flaws").val();
 
 	if(flawType !== "none") { flawString += flawType + " "; }
-	if(flaw !== "") { flawString += flaw + ", please check additional picture(s) for more info"; }
+	if(flaw !== "") { 
+		flawString += flaw;
+		if($("#flaws-append-text").prop('checked') === true) flawString += ", please check additional picture(s) for more info"; 
+	}
 	
-	if (flawString.length > 0) {
-		flawString = flawString.charAt(0) + flawString.slice(1).toLowerCase();
+	if (flawString !== "") {
+		flawString = flawString.charAt(0).toUpperCase() + flawString.slice(1).toLowerCase();
 		flawString = "\n*" + flawString;
 	}
 
