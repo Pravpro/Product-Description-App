@@ -29,6 +29,12 @@ $(document).on("click", "#clear-btn", function(){
 	setForm();
 });
 
+$(document).on('click', 'input[type=radio]', function(e){
+    if (e.ctrlKey) {
+        $(this).prop('checked', false);
+    }
+});
+
 $(document).on('click', '#generate-btn', function(){
 	generateDescription($("textarea"));
 });
@@ -44,7 +50,7 @@ $(document).on('change', '#same-size', function(){
 	var labelSize = $("input[name=label-size]:checked");
 	if(labelGender.length > 0) {$("input[name=recommended-gender][value=" + labelGender.val() + "]").prop('checked', true)}
 	if(labelSize.length > 0) {$("input[name=recommended-size][value=" + labelSize.val() + "]").prop('checked', true)}
-	// disable recommended gender/size radio buttons
+	$("#recommended-extra").val($("#label-extra").val());
 });
 
 $(document).on('change', '#no-label', function() {
@@ -60,7 +66,10 @@ $(document).on('change', '#no-label', function() {
 	}
 });
 
-$(document).on('change', 'input[name=recommended-size], input[name=recommended-gender]', function(){
+$(document).on('change', 'input[name=recommended-size], input[name=recommended-gender], #recommended-extra', function(){
+	$("#same-size").prop("checked", false);
+});
+$(document).on('keydown', '#recommended-extra', function(event) {
 	$("#same-size").prop("checked", false);
 });
 
@@ -117,9 +126,11 @@ function getTitle() {
 function getRecommendedSize() {
 	var gender = genderMap[$("input[name=recommended-gender]:checked").val()];
 	var size = sizeMap[$("input[name=recommended-size]:checked").val()];
+	var extra = $("#recommended-extra").val();
 	var recommendedSize = "";
-	if(gender != undefined) recommendedSize += gender;
-	if(size != undefined) recommendedSize += " " + size;
+	if(gender != undefined) recommendedSize += gender + " ";
+	if(size != undefined) recommendedSize += size + " ";
+	recommendedSize += extra;
 
 	return recommendedSize;
 }
@@ -129,9 +140,11 @@ function getSizeOnLabel() {
 
 	var gender = genderMap[$("input[name=label-gender]:checked").val()];
 	var size = sizeMap[$("input[name=label-size]:checked").val()];
+	var extra = $("#label-extra").val();
 	var labelSize = "";
-	if(gender != undefined) labelSize += gender;
-	if(size != undefined) labelSize += " " + size;
+	if(gender != undefined) labelSize += gender + " ";
+	if(size != undefined) labelSize +=  size + " ";
+	labelSize += extra;
 
 	return labelSize;
 }
