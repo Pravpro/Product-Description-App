@@ -90,16 +90,20 @@ $(document).on('hidden.bs.popover', "#copy-btn", function () {
 
 function setForm() {
 	$("#form").html(formHTML); // Default form is setup for Tops
-	var measurement1Section = $("#measurement1-input-group");
-	var label = measurement1Section.find('label')
-	var inputSection = measurement1Section.find('>div')
+	var m1Section = $("#measurement1-input-group");
+	var m1label = m1Section.find('label');
+	var m1inputSection = m1Section.find('>div');
 
 	var radioValue = $("input[name='type-selection']:checked").val();
 	if (radioValue === "bottoms") {
-		label.html("<strong>Waist:</strong>");
-		label.toggleClass('col-3 col-4');
-		inputSection.toggleClass('col-5 col-4');
-		measurement1Section.append('-' + '<div class="col-4">' + inputSection.html() + '</div>');
+		m1label.html("<strong>Waist:</strong>");
+		m1label.toggleClass('col-3 col-4');
+		m1inputSection.toggleClass('col-5 col-4');
+		m1Section.append('-' + '<div class="col-4">' + m1inputSection.html() + '</div>');
+	}
+	if (radioValue === "jeans") {
+		m1label.html("<strong>Waist:</strong>");
+		$("#measurement2-input-group label").html("<strong>Inseem:</strong>")
 	}
 	// Activate popovers
 	$('[data-toggle="popover"]').popover();
@@ -150,12 +154,14 @@ function getSizeOnLabel() {
 }
 
 function getMeasurements() {
-	m1String = "";
-	m1Inputs = $("#measurement1-input-group input");
+	var m1Inputs = $("#measurement1-input-group input");
+	var m1String = $("#measurement1-input-group label").text() + " ";
 	m1String += m1Inputs.val() + "\"";
 	if(m1Inputs.length === 2 && m1Inputs[1].value !== "") m1String += " - " + m1Inputs[1].value + "\"";
 
-	return $("#measurement1-input-group label").text() + " " + m1String + "\nLength: " + $("#length").val() + "\"";
+	var m2String = $("#measurement2-input-group label").text() + " " + $("#measurement2").val() + "\"";
+
+	return m1String + "\n" + m2String;
 }
 
 function getFlaws(){
