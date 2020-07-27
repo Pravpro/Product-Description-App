@@ -13,7 +13,7 @@
 	<title>Vibn Product Description Generator</title>
 </head>
 <body>
-	<div class="container position-relative pb-5 pb-xl-2">
+	<div class="container-md position-relative pb-5 pb-xl-2">
 		<h1 class="d-lg-none font-weight-light text-center">Product Description Generator</h1>
 		<h1 class="d-none d-lg-block display-4 text-center">Product Description Generator</h1>
 		<div class="row justify-content-center my-2" id="type-selection">
@@ -121,7 +121,7 @@
 							<div class="input-group-append">
 								<div class="input-group-text">
 									<input type="checkbox" id="flaws-append-text" checked disabled>
-									<label class="mb-0 ml-1" for="flaws-append-text">", please check additional picture(s) for more info"</label>
+									<label class="overflow-hidden mb-0 ml-1" for="flaws-append-text">", please check additional picture(s) for more info"</label><span class="d-lg-none">...</span>
 								</div>
 							    <button id="flaws-reset" class="btn btn-outline-secondary" type="button"><i class="fas fa-sync"></i></button>
 							</div>
@@ -134,179 +134,182 @@
 				</div>
 
 				<div class="form-row">
-					<div class="col-5">
+					<div class="col-12 col-lg-5">
 						<div class="form-row">
-							<div class="col-12">
-								<div class="form-row">
-									<div class="col-12">
-										<span class="lead mr-1">Size On Label:</span>
-										(<div class="form-check form-check-inline mx-1">
-											<input class="form-check-input" type="checkbox" id="no-label">
-											<label class="form-check-label" for="no-label">No label?</label>
-										</div>)
-										<div class="form-group mb-0">
-											<p class="d-inline pr-3"><strong>Gender:</strong></p>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-gender" type="radio" id="label-male" value="male">
-												<label class="form-check-label" for="label-male">Men's</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-gender" type="radio" id="label-female" value="female">
-												<label class="form-check-label" for="label-female">Women's</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-gender" type="radio" id="label-youth" value="youth">
-												<label class="form-check-label" for="label-youth">Youth's</label>
-											</div>
+							<div class="col-8 col-lg-12">
+								<section id="size-on-label-section">
+									<span class="lead mr-1">Size On Label:</span>
+									(<div class="form-check form-check-inline mx-1">
+										<input class="form-check-input" type="checkbox" id="no-label">
+										<label class="form-check-label" for="no-label">No label?</label>
+									</div>)
+									<div class="form-group mb-0">
+										<p class="d-inline pr-3"><strong>Gender:</strong></p>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-gender" type="radio" id="label-male" value="male">
+											<label class="form-check-label" for="label-male">Men's</label>
 										</div>
-										<div class="form-group mb-0">
-											<p class="d-inline pr-3"><strong>Size:</strong></p>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-size" type="radio" id="label-xs" value="xs">
-												<label class="form-check-label" for="label-xs">XS</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-size" type="radio" id="label-s" value="s">
-												<label class="form-check-label" for="label-s">S</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-size" type="radio" id="label-m" value="m">
-												<label class="form-check-label" for="label-m">M</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-size" type="radio" id="label-l" value="l">
-												<label class="form-check-label" for="label-l">L</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-size" type="radio" id="label-xl" value="xl">
-												<label class="form-check-label" for="label-xl">XL</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-size" type="radio" id="label-2xl" value="2xl">
-												<label class="form-check-label" for="label-2xl">2XL</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="label-size" type="radio" id="label-3xl" value="3xl">
-												<label class="form-check-label" for="label-3xl">3XL</label>
-											</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-gender" type="radio" id="label-female" value="female">
+											<label class="form-check-label" for="label-female">Women's</label>
 										</div>
-										<div class="form-group d-flex">
-											<label for="label-extra" class="mr-3"><strong>Extra:</strong></label>
-											<div class="form-row">
-												<div class="col-6">
-													<input type="text" class="form-control form-control-sm" id="label-extra">
-												</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-gender" type="radio" id="label-youth" value="youth">
+											<label class="form-check-label" for="label-youth">Youth's</label>
+										</div>
+									</div>
+									<div class="form-group mb-0">
+										<p class="d-inline pr-3"><strong>Size:</strong></p>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-size" type="radio" id="label-xs" value="xs">
+											<label class="form-check-label" for="label-xs">XS</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-size" type="radio" id="label-s" value="s">
+											<label class="form-check-label" for="label-s">S</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-size" type="radio" id="label-m" value="m">
+											<label class="form-check-label" for="label-m">M</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-size" type="radio" id="label-l" value="l">
+											<label class="form-check-label" for="label-l">L</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-size" type="radio" id="label-xl" value="xl">
+											<label class="form-check-label" for="label-xl">XL</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-size" type="radio" id="label-2xl" value="2xl">
+											<label class="form-check-label" for="label-2xl">2XL</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="label-size" type="radio" id="label-3xl" value="3xl">
+											<label class="form-check-label" for="label-3xl">3XL</label>
+										</div>
+									</div>
+									<div class="form-group d-flex">
+										<label for="label-extra" class="mr-3"><strong>Extra:</strong></label>
+										<div class="form-row">
+											<div class="col-6">
+												<input type="text" class="form-control form-control-sm" id="label-extra">
 											</div>
 										</div>
 									</div>
-													
-									
-									<div class="col-12">
-										<span class="lead mr-1">Recommended Size:</span>
-										(<div class="form-check form-check-inline mx-1">
-											<input class="form-check-input" type="checkbox" id="same-size">
-											<label class="form-check-label" for="same-size">Same as size on label?</label>
-										</div>)
-										<div class="form-group mb-0">
-											<p class="d-inline pr-3"><strong>Gender:</strong></p>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-gender" type="radio" id="recommended-male" value="male">
-												<label class="form-check-label" for="recommended-male">Men's</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-gender" type="radio" id="recommended-female" value="female">
-												<label class="form-check-label" for="recommended-female">Women's</label>
-											</div>
+								</section>
+								
+								<section id="recommended-size-section">
+									<span class="lead mr-1">Recommended Size:</span>
+									(<div class="form-check form-check-inline mx-1">
+										<input class="form-check-input" type="checkbox" id="same-size">
+										<label class="form-check-label" for="same-size">Same as size on label?</label>
+									</div>)
+									<div class="form-group mb-0">
+										<p class="d-inline pr-3"><strong>Gender:</strong></p>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-gender" type="radio" id="recommended-male" value="male">
+											<label class="form-check-label" for="recommended-male">Men's</label>
 										</div>
-										<div class="form-group mb-0">
-											<p class="d-inline pr-3"><strong>Size:</strong></p>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-size" type="radio" id="recommended-xs" value="xs">
-												<label class="form-check-label" for="recommended-xs">XS</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-size" type="radio" id="recommended-s" value="s">
-												<label class="form-check-label" for="recommended-s">S</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-size" type="radio" id="recommended-m" value="m">
-												<label class="form-check-label" for="recommended-m">M</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-size" type="radio" id="recommended-l" value="l">
-												<label class="form-check-label" for="recommended-l">L</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-size" type="radio" id="recommended-xl" value="xl">
-												<label class="form-check-label" for="recommended-xl">XL</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-size" type="radio" id="recommended-2xl" value="2xl">
-												<label class="form-check-label" for="recommended-2xl">2XL</label>
-											</div>
-											<div class="form-check form-check-inline">
-												<input class="form-check-input" name="recommended-size" type="radio" id="recommended-3xl" value="3xl">
-												<label class="form-check-label" for="recommended-3xl">3XL</label>
-											</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-gender" type="radio" id="recommended-female" value="female">
+											<label class="form-check-label" for="recommended-female">Women's</label>
 										</div>
-										<div class="form-group d-flex">
-											<label for="recommended-extra" class="mr-3"><strong>Extra:</strong></label>
-											<div class="form-row">
-												<div class="col-6">
-													<input type="text" class="form-control form-control-sm" id="recommended-extra">
-												</div>
+									</div>
+									<div class="form-group mb-0">
+										<p class="d-inline pr-3"><strong>Size:</strong></p>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-xs" value="xs">
+											<label class="form-check-label" for="recommended-xs">XS</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-s" value="s">
+											<label class="form-check-label" for="recommended-s">S</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-m" value="m">
+											<label class="form-check-label" for="recommended-m">M</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-l" value="l">
+											<label class="form-check-label" for="recommended-l">L</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-xl" value="xl">
+											<label class="form-check-label" for="recommended-xl">XL</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-2xl" value="2xl">
+											<label class="form-check-label" for="recommended-2xl">2XL</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-3xl" value="3xl">
+											<label class="form-check-label" for="recommended-3xl">3XL</label>
+										</div>
+									</div>
+									<div class="form-group d-flex">
+										<label for="recommended-extra" class="mr-3"><strong>Extra:</strong></label>
+										<div class="form-row">
+											<div class="col-6">
+												<input type="text" class="form-control form-control-sm" id="recommended-extra">
 											</div>
 										</div>
 									</div>
-								</div>
+								</section>
 							</div>
 							
-							<div class="col-7 pr-4">
-								<div class="lead mb-1">Measurements:</div>
-								<div id="measurement1-input-group" class="form-row mb-2">
-									<label class="col-5 col-xl-4"><strong>Pit-to-Pit:</strong></label>
-									<div class="col-5">
-										<div class="input-group input-group-sm">
-											<input type="number" class="form-control">
-											<div class="input-group-append d-none d-xl-inline">
-											    <span class="input-group-text">"</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div id="measurement2-input-group" class="form-row">
-									<label class="col-4" for="measurement2"><strong>Length:</strong></label>
-									<div class="col-5">
-										<div class="input-group input-group-sm">
-											<input id="measurement2" type="number" class="form-control">
-											<div class="input-group-append d-none d-xl-inline">
-											    <span class="input-group-text">"</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-5">
-								<label for="price" class="lead mb-1">Price:</label>
+							<div class="col-lg-12 col-4">
 								<div class="form-row">
-									<div class="input-group input-group-sm col-10 col-xl-9">
-										<div class="input-group-prepend">
-										    <span class="input-group-text">$</span>
+									<div class="col-lg-7 col-12 pr-4">
+										<div class="lead mb-1">Measurements:</div>
+										<div id="measurement1-input-group" class="form-row mb-2">
+											<label class="col-5 col-xl-4"><strong>Pit-to-Pit:</strong></label>
+											<div class="col-5">
+												<div class="input-group input-group-sm">
+													<input type="number" class="form-control">
+													<div class="input-group-append d-none d-xl-inline">
+													    <span class="input-group-text">"</span>
+													</div>
+												</div>
+											</div>
 										</div>
-										<input id="price" type="number" class="form-control">
-										<div class="input-group-append">
-										    <span class="input-group-text">.00</span>
+										<div id="measurement2-input-group" class="form-row mb-lg-0">
+											<label class="col-5 col-xl-4" for="measurement2"><strong>Length:</strong></label>
+											<div class="col-5">
+												<div class="input-group input-group-sm">
+													<input id="measurement2" type="number" class="form-control">
+													<div class="input-group-append d-none d-xl-inline">
+													    <span class="input-group-text">"</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-5 col-8">
+										<label for="price" class="lead mb-1">Price:</label>
+										<div class="form-row">
+											<div class="input-group input-group-sm col-10 col-xl-9">
+												<div class="input-group-prepend">
+												    <span class="input-group-text">$</span>
+												</div>
+												<input id="price" type="number" class="form-control">
+												<div class="input-group-append">
+												    <span class="input-group-text">.00</span>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 
-					<div class="col-7">
+					<div class="col-12 col-lg-7">
 						<div class="form-row d-flex align-content-end mt-2 h-100">
-							<div class="col-2">
-								<button id="generate-btn" type="button" class="btn btn-primary ml-xl-3">Generate</button>
+							<div class="col-2 d-flex justify-content-end">
+								<button id="generate-btn" type="button" class="btn btn-primary align-self-baseline">Generate</button>
 							</div>
 							<div class="col-10">
 								<div class="form-group">

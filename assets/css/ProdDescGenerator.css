@@ -11,6 +11,12 @@
 #flaws-reset {
 	border-color: #adb5bd;
 }
+#measurement2-input-group {
+	margin-bottom: 20px;
+}
+#generate-btn {
+	margin-right: -5px;
+}
 textarea.form-control {
 	line-height: 1.2
 }
@@ -33,4 +39,11 @@ textarea.form-control {
 }
 .popover .arrow::before {
 	border-top-color: rgba(0,0,0,0);
+}
+
+
+@media (max-width: 991.98px) { 
+	#flaws-group>.input-group-append>.input-group-text {
+		width: 250px;
+	}
 }
