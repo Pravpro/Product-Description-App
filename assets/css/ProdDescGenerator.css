@@ -2,8 +2,11 @@
 	position: absolute;
 	left: 15px;
 }
-.title-input-group input:nth-of-type(3), #flaws {
+.title-input-group input:nth-of-type(3) {
 	width: 29%;
+}
+#flaws {
+	width: 24%;
 }
 #flaws-reset {
 	border-color: #adb5bd;

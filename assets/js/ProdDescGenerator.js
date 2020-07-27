@@ -97,7 +97,7 @@ function setForm() {
 	var radioValue = $("input[name='type-selection']:checked").val();
 	if (radioValue === "bottoms") {
 		m1label.html("<strong>Waist:</strong>");
-		m1label.toggleClass('col-3 col-4');
+		m1label.toggleClass('col-3 col-xl-4 col-5');
 		m1inputSection.toggleClass('col-5 col-4');
 		m1Section.append('-' + '<div class="col-4">' + m1inputSection.html() + '</div>');
 	}
