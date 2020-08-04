@@ -50,7 +50,7 @@ $(document).on('change', '#same-size', function(){
 	var labelSize = $("input[name=label-size]:checked");
 	if(labelGender.length > 0) {$("input[name=recommended-gender][value=" + labelGender.val() + "]").prop('checked', true)}
 	if(labelSize.length > 0) {$("input[name=recommended-size][value=" + labelSize.val() + "]").prop('checked', true)}
-	$("#recommended-extra").val($("#label-extra").val());
+	if ($("input[name='type-selection']:checked").val() !== "tops") $("#recommended-extra").val($("#label-extra").val());
 });
 
 $(document).on('change', '#no-label', function() {
@@ -66,7 +66,7 @@ $(document).on('change', '#no-label', function() {
 	}
 });
 
-$(document).on('change', 'input[name=recommended-size], input[name=recommended-gender], #recommended-extra', function(){
+$(document).on('change', 'input[name=recommended-size], input[name=label-size], input[name=recommended-gender], input[name=label-gender], #recommended-extra, #label-extra', function(){
 	$("#same-size").prop("checked", false);
 });
 $(document).on('keydown', '#recommended-extra', function(event) {
