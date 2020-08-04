@@ -103,7 +103,7 @@ function setForm() {
 	}
 	if (radioValue === "jeans") {
 		m1label.html("<strong>Waist:</strong>");
-		$("#measurement2-input-group label").html("<strong>Inseem:</strong>")
+		$("#measurement2-input-group label").html("<strong>Inseam:</strong>")
 	}
 	// Activate popovers
 	$('[data-toggle="popover"]').popover();
