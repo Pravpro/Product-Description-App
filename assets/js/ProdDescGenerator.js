@@ -17,8 +17,8 @@ var sizeMap = {
 	"m" : "Medium",
 	"l" : "Large",
 	"xl" : "XL",
-	"2xl" : "XXL",
-	"3xl" : "XXXL",
+	"2xl" : "2XL",
+	"3xl" : "3XL",
 }
 
 $("input[name='type-selection']").change(function(){
