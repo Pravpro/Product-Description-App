@@ -21,6 +21,7 @@ var sizeMap = {
 	"3xl" : "3XL",
 }
 
+// Set Form according to slected clothing type
 $("input[name='type-selection']").change(function(){
 	setForm();
 });
@@ -88,6 +89,7 @@ $(document).on('hidden.bs.popover', "#copy-btn", function () {
 	$("#copy-btn").attr("data-content", "Copy to clipboard");
 });
 
+// Logic for creating form
 function setForm() {
 	$("#form").html(formHTML); // Default form is setup for Tops
 	var m1Section = $("#measurement1-input-group");
@@ -101,9 +103,11 @@ function setForm() {
 		m1inputSection.toggleClass('col-5 col-4');
 		m1Section.append('-' + '<div class="col-4">' + m1inputSection.html() + '</div>');
 	}
-	if (radioValue === "jeans") {
+	if (radioValue === "jeans" || radioValue === "shorts") {
 		m1label.html("<strong>Waist:</strong>");
-		$("#measurement2-input-group label").html("<strong>Inseam:</strong>")
+		$("#measurement2-input-group label").html("<strong>Inseam:</strong>");
+		$("#measurement3-input-group").toggleClass('d-none');
+		if (radioValue === "jeans") $("#measurement4-input-group").toggleClass('d-none');
 	}
 	// Activate popovers
 	$('[data-toggle="popover"]').popover();
@@ -161,7 +165,16 @@ function getMeasurements() {
 
 	var m2String = $("#measurement2-input-group label").text() + " " + $("#measurement2").val() + "\"";
 
-	return m1String + "\n" + m2String;
+	m3String = '';
+	if(!$("#measurement3-input-group").hasClass('d-none')) {
+		m3String = $("#measurement3-input-group label").text() + " " + $("#measurement3").val() + "\"";
+	}
+	m4String = '';
+	if(!$("#measurement4-input-group").hasClass('d-none')) {
+		m4String = $("#measurement4-input-group label").text() + " " + $("#measurement4").val() + "\"";
+	}
+
+	return m1String + "\n" + m2String + (()=>{if(m3String !== "") return "\n" + m3String })() + (()=>{if(m4String !== "") return "\n" + m4String })();
 }
 
 function getFlaws(){
