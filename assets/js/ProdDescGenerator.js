@@ -21,6 +21,8 @@ var sizeMap = {
 	"3xl" : "3XL",
 }
 
+// ================================= TRIGGERS =================================
+
 // Set Form according to slected clothing type
 $("input[name='type-selection']").change(function(){
 	setForm();
@@ -90,6 +92,8 @@ $(document).on('hidden.bs.popover', "#copy-btn", function () {
 	$("#copy-btn").attr("data-content", "Copy to clipboard");
 });
 
+// ================================= FUNCTIONS =================================
+
 // Logic for creating form
 function setForm() {
 	$("#form").html(formHTML); // Default form is setup for Tops
@@ -115,8 +119,8 @@ function setForm() {
 }
 
 function generateDescription(el) {
-	var desc = "Title:" + getTitle() + "\n\nSize On Label: " + getSizeOnLabel() + 
-		"\n\nRecommended Size: " + getRecommendedSize() + "\n\nMeasurements:\n" + getMeasurements() + 
+	var desc = "Title:" + getTitle() + "\n\nSize On Label: " + getSizeOnLabel() + "\nRecommended Size: " + 
+		getRecommendedSize() + "\n\nEra: " + getEra() + "\n\nMeasurements:\n" + getMeasurements() + 
 		getFlaws() + "\n\nBrand: " + $("#brand").val() + "\n\nPrice: $" + $("#price").val();
 	el.text(desc);
 }
@@ -156,6 +160,10 @@ function getSizeOnLabel() {
 	labelSize += extra;
 
 	return labelSize;
+}
+
+function getEra(){
+	return $("input#era").val();
 }
 
 function getMeasurements() {
