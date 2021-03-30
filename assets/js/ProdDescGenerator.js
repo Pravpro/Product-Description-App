@@ -174,7 +174,7 @@ function getMeasurements() {
 		m4String = $("#measurement4-input-group label").text() + " " + $("#measurement4").val() + "\"";
 	}
 
-	return m1String + "\n" + m2String + (()=>{if(m3String !== "") return "\n" + m3String })() + (()=>{if(m4String !== "") return "\n" + m4String })();
+	return m1String + "\n" + m2String + (()=>{return m3String !== "" ? "\n" + m3String : ""})() + (()=>{return m4String !== "" ? "\n" + m4String : ""})();
 }
 
 function getFlaws(){
