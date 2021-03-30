@@ -30,8 +30,9 @@ $(document).on("click", "#clear-btn", function(){
 	setForm();
 });
 
+// Allow for deselection of radio buttons
 $(document).on('click', 'input[type=radio]', function(e){
-    if (e.ctrlKey) {
+    if (e.ctrlKey || e.metaKey) {
         $(this).prop('checked', false);
     }
 });
