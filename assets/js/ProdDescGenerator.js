@@ -109,7 +109,12 @@ function setForm() {
 		m1Section.append('-' + '<div class="col-4">' + m1inputSection.html() + '</div>');
 	}
 	if (radioValue === "jeans" || radioValue === "shorts") {
-		m1label.html("<strong>Waist:</strong>");
+		m1label.html("<strong>Waist:</strong>")
+		if(radioValue === "shorts") {
+			m1label.toggleClass('col-3 col-xl-4 col-5');
+			m1inputSection.toggleClass('col-5 col-4');
+			m1Section.append('-' + '<div class="col-4">' + m1inputSection.html() + '</div>');
+		}
 		$("#measurement2-input-group label").html("<strong>Inseam:</strong>");
 		$("#measurement3-input-group").toggleClass('d-none');
 		if (radioValue === "jeans") $("#measurement4-input-group").toggleClass('d-none');
