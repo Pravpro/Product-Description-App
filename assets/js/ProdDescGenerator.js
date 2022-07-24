@@ -125,7 +125,7 @@ function setForm() {
 
 function generateDescription(el) {
 	var desc = "Title:" + getTitle() + "\n\nSize On Label: " + getSizeOnLabel() + "\nRecommended Size: " + 
-		getRecommendedSize() + "\n\nEra: " + getEra() + "\n\nMeasurements:\n" + getMeasurements() + 
+		getRecommendedSize() + "\n\nEra: " + getEra() + "\nSKU: " + getSku() + "\n\nMeasurements:\n" + getMeasurements() + 
 		getFlaws() + "\n\nBrand: " + $("#brand").val() + "\n\nPrice: $" + $("#price").val();
 	el.text(desc);
 }
@@ -208,4 +208,8 @@ function getFlaws(){
 	}
 
 	return flawString;
+}
+
+function getSku(){
+	return $("input#sku").val();
 }
