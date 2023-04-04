@@ -21,7 +21,7 @@ var sizeMap = {
 	"3xl" : "3XL",
 }
 
-// ================================= TRIGGERS =================================
+// ================================= HANDLERS =================================
 
 // Set Form according to slected clothing type
 $("input[name='type-selection']").change(function(){
@@ -40,7 +40,7 @@ $(document).on('click', 'input[type=radio]', function(e){
 });
 
 $(document).on('click', '#generate-btn', function(){
-	generateDescription($("textarea"));
+	generateDescription($("textarea#generate-text"));
 });
 
 $(document).on('keyup', '#flaws', function(){
@@ -124,17 +124,17 @@ function setForm() {
 }
 
 function generateDescription(el) {
-	var desc = "Title:" + getTitle() + "\n\nSize On Label: " + getSizeOnLabel() + "\nRecommended Size: " + 
-		getRecommendedSize() + "\n\nEra: " + getEra() + "\n\nMeasurements:\n" + getMeasurements() + 
-		getFlaws() + "\n\nBrand: " + $("#brand").val() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
+	var desc = "Title:" + getTitle() + "\n\n" + $("#description").val() + "\n\nSize On Label: " +
+		getSizeOnLabel() + "\nRecommended Size: " + getRecommendedSize() + getFlaws() + "\n\nBrand: " +
+		$("#brand").val() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
 	el.text(desc);
 }
 
 function getTitle() {
 	var title = "";
-	if($("#vintage")[0].checked) {title += " Vintage"};
-	for (var i = 0; i < $("#title-group>input").length; i++) {
-		var input = $("#title-group>input")[i];
+	// if($("#vintage")[0].checked) {title += " Vintage"};
+	for (var i = 0; i < $("#title-group input").length; i++) {
+		var input = $("#title-group input")[i];
 		if(input.value != "") title += " " + input.value;
 	}
 	title += " - " + getRecommendedSize();
@@ -167,9 +167,9 @@ function getSizeOnLabel() {
 	return labelSize;
 }
 
-function getEra(){
-	return $("input#era").val();
-}
+// function getEra(){
+// 	return $("input#era").val();
+// }
 
 function getMeasurements() {
 	var m1Inputs = $("#measurement1-input-group input");
@@ -193,15 +193,15 @@ function getMeasurements() {
 
 function getFlaws(){
 	var flawString = "";
-	var flawType = $("#flaw-type").val();
+	// var flawType = $("#flaw-type").val();
 	var flaw = $("#flaws").val();
 
-	if(flawType !== "none") { flawString += flawType + " "; }
-	if(flaw !== "") { 
+	// if(flawType !== "none") { flawString += flawType + " "; }
+	if(flaw !== "") {
 		flawString += flaw;
-		if($("#flaws-append-text").prop('checked') === true) flawString += ", please check additional picture(s) for more info"; 
+		if($("#flaws-append-text").prop('checked') === true) flawString += ", please check additional picture(s) for more info";
 	}
-	
+
 	if (flawString !== "") {
 		flawString = flawString.charAt(0).toUpperCase() + flawString.slice(1).toLowerCase();
 		flawString = "\n*" + flawString;
