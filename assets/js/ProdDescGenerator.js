@@ -124,7 +124,7 @@ function setForm() {
 }
 
 function generateDescription(el) {
-	var desc = "Title:" + getTitle() + "\n\n" + $("#description").val() + "\n\nSize On Label: " +
+	var desc = "Title:" + getTitle() + ($("#description").val() ? "\n\n" + $("#description").val() : "") + "\n\nSize On Label: " +
 		getSizeOnLabel() + "\nRecommended Size: " + getRecommendedSize() + getFlaws() + "\n\nBrand: " +
 		$("#brand").val() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
 	el.text(desc);
@@ -132,9 +132,9 @@ function generateDescription(el) {
 
 function getTitle() {
 	var title = "";
-	// if($("#vintage")[0].checked) {title += " Vintage"};
-	for (var i = 0; i < $("#title-group input").length; i++) {
-		var input = $("#title-group input")[i];
+	if($("#vintage")[0].checked) {title += " Vintage"};
+	for (var i = 0; i < $("#title-group>input").length; i++) {
+		var input = $("#title-group>input")[i];
 		if(input.value != "") title += " " + input.value;
 	}
 	title += " - " + getRecommendedSize();
