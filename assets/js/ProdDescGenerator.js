@@ -126,8 +126,12 @@ function setForm() {
 function generateDescription(el) {
 	var desc = "Title:" + getTitle() + ($("#description").val() ? "\n\n" + $("#description").val() : "") + "\n\nSize On Label: " +
 		getSizeOnLabel() + "\nRecommended Size: " + getRecommendedSize() + getFlaws() + "\n\nBrand: " +
-		$("#brand").val() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
+		getBrand() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
 	el.text(desc);
+}
+
+function getBrand(){
+	return $("#brand").val() ? $("#brand").val() : $("#title-brand").val();
 }
 
 function getTitle() {
