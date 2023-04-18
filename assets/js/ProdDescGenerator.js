@@ -197,10 +197,10 @@ function getMeasurements() {
 
 function getFlaws(){
 	var flawString = "";
-	// var flawType = $("#flaw-type").val();
+	var flawType = $("#flaw-type").val();
 	var flaw = $("#flaws").val();
 
-	// if(flawType !== "none") { flawString += flawType + " "; }
+	if(flawType !== "none") { flawString += flawType + " "; }
 	if(flaw !== "") {
 		flawString += flaw;
 		if($("#flaws-append-text").prop('checked') === true) flawString += ", please check additional picture(s) for more info";
