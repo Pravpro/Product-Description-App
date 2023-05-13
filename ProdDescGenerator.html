@@ -51,11 +51,21 @@
                                 <label class="mb-0 ml-1" for="vintage">Vintage</label>
                             </div>
                         </div>
-                        <input type="text" class="form-control" placeholder="Text before brand">
+                        <input type="text" class="form-control" placeholder="Text before brand" list="before-brand">
                         <input id="title-brand" type="text" class="form-control" placeholder="Brand" list="brands">
                         <input type="text" class="form-control" placeholder="Type" list="types">
                     </div>
+                    <datalist id="before-brand">
+                        <option>Adidas</option>
+                        <option>Champion</option>
+                        <option>Fila</option>
+                        <option>Nike</option>
+                        <option>Puma</option>
+                        <option>Reebok</option>
+                        <option>Starter</option>
+                    </datalist>
                     <datalist id="types">
+                        <option>1/2 Zip Fleece Sweatshirt</option>
                         <option>1/2 Zip Jacket</option>
                         <option>1/2 Zip Windbreaker</option>
                         <option>1/4 Zip Fleece Sweatshirt</option>
@@ -69,11 +79,15 @@
                         <option>Buttoned Shirt</option>
                         <option>Colorblock Windbreaker</option>
                         <option>Crewneck Sweatshirt</option>
+                        <option>Cuffed Sweatpants</option>
+                        <option>Cuffed Track Pants</option>
                         <option>Denali Fleece Jacket</option>
                         <option>Denim Jacket</option>
-                        <option>Fleece Jacket</option>
+                        <option>Flannel Shirt</option>
                         <option>Fleece Hoodie</option>
+                        <option>Fleece Jacket</option>
                         <option>Fleece Lined Jacket</option>
+                        <option>Fleece Sweatshirt</option>
                         <option>Half-Sleeve</option>
                         <option>Half-Sleeve Buttoned Shirt</option>
                         <option>Hoodie</option>
@@ -87,31 +101,42 @@
                         <option>Leather Jacket</option>
                         <option>Lightweight Jacket</option>
                         <option>Long-Sleeve</option>
+                        <option>Long-Sleeve Polo Shirt</option>
+                        <option>Long-Sleeve T-Shirt</option>
                         <option>Mock Neck Sweatshirt</option>
                         <option>Polo Shirt</option>
+                        <option>Puffer Jacket</option>
                         <option>Pullover Hoodie</option>
                         <option>Pullover Sweatshirt</option>
+                        <option>Racing Jacket</option>
+                        <option>Reverse Weave Hoodie</option>
                         <option>Reverse Weave Pullover Sweatshirt</option>
                         <option>Reversible Fleece Hoodie</option>
                         <option>Reversible Fleece Jacket</option>
+                        <option>Reversible Lightweight Jacket</option>
                         <option>Rugby Polo Shirt</option>
                         <option>Rugby Striped Polo Shirt</option>
                         <option>Shirt</option>
                         <option>Shorts</option>
+                        <option>Sleeveless T-Shirt</option>
                         <option>Spell Out Pullover Windbreaker</option>
                         <option>Spell Out Track Jacket</option>
                         <option>Spell Out Windbreaker</option>
                         <option>Sweater</option>
                         <option>Sweatpants</option>
+                        <option>Sweatshirt</option>
                         <option>T-Shirt</option>
                         <option>Tank Top</option>
                         <option>Tearaway Track Pants</option>
+                        <option>Tonal Logo Cuffed Track Pants</option>
+                        <option>Tonal Logo Sweatpants</option>
                         <option>Tonal Logo Track Pants</option>
                         <option>Track Jacket</option>
                         <option>Track Pants</option>
                         <option>Vest</option>
                         <option>V-Neck Sweatshirt</option>
                         <option>Wind Shorts</option>
+                        <option>Wind Track Pants</option>
                         <option>Windbreaker</option>
                         <option>Zip-Away Track Pants</option>
                         <option>Zip-Up Hoodie</option>
@@ -131,29 +156,36 @@
                             </div>
                             <datalist id="brands">
                                 <option>Adidas</option>
+                                <option>B.U.M Equipment</option>
+                                <option>Burberry</option>
                                 <option>Calvin Klein</option>
                                 <option>Carhartt</option>
                                 <option>CFL</option>
                                 <option>Champion</option>
                                 <option>Chaps Ralph Lauren</option>
+                                <option>Christian Dior</option>
                                 <option>Columbia</option>
                                 <option>Diadora</option>
                                 <option>Disney</option>
                                 <option>Eddie Bauer</option>
                                 <option>Fila</option>
+                                <option>Fubu</option>
                                 <option>Guess</option>
                                 <option>Hard Rock Cafe</option>
                                 <option>Harley Davidson</option>
+                                <option>Jansport</option>
                                 <option>Jordan</option>
                                 <option>Kappa</option>
-                                <option>Lacoste</option>
                                 <option>L.L. Bean</option>
+                                <option>Lacoste</option>
                                 <option>Lee</option>
                                 <option>Levis</option>
+                                <option>Lotto</option>
+                                <option>MLB</option>
                                 <option>Majestic</option>
                                 <option>Marithe Francois Girbaud</option>
                                 <option>Marlboro</option>
-                                <option>MLB</option>
+                                <option>Music</option>
                                 <option>Nascar</option>
                                 <option>Nautica</option>
                                 <option>NBA</option>
@@ -165,6 +197,7 @@
                                 <option>Pendleton</option>
                                 <option>Planet Hollywood</option>
                                 <option>Polo Ralph Lauren</option>
+                                <option>Polo Sport</option>
                                 <option>Pro Player</option>
                                 <option>Puma</option>
                                 <option>Reebok</option>
@@ -173,6 +206,7 @@
                                 <option>Tommy Hilfiger</option>
                                 <option>Umbro</option>
                                 <option>Woolrich</option>
+                                <option>Wrangler</option>
                             </datalist>
                         </div>
                     </div>
@@ -229,8 +263,10 @@
                             <option>Color-bleeding present</option>
                             <option>Burn mark present</option>
                             <option>Pinholes present</option>
+                            <option>Scratches present</option>
                             <option>Signs of wear present</option>
                             <option>Signs of fading present</option>
+                            <option>Tear present</option>
                         </datalist>
                     </div>
                 </div>
