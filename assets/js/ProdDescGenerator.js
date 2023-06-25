@@ -21,7 +21,7 @@ var sizeMap = {
 	"3xl" : "3XL",
 }
 
-// ================================= TRIGGERS =================================
+// ================================= HANDLERS =================================
 
 // Set Form according to slected clothing type
 $("input[name='type-selection']").change(function(){
@@ -40,7 +40,7 @@ $(document).on('click', 'input[type=radio]', function(e){
 });
 
 $(document).on('click', '#generate-btn', function(){
-	generateDescription($("textarea"));
+	generateDescription($("textarea#generate-text"));
 });
 
 $(document).on('keyup', '#flaws', function(){
@@ -124,10 +124,14 @@ function setForm() {
 }
 
 function generateDescription(el) {
-	var desc = "Title:" + getTitle() + "\n\nSize On Label: " + getSizeOnLabel() + "\nRecommended Size: " + 
-		getRecommendedSize() + "\n\nEra: " + getEra() + "\n\nMeasurements:\n" + getMeasurements() + 
-		getFlaws() + "\n\nBrand: " + $("#brand").val() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
+	var desc = "Title:" + getTitle() + ($("#description").val() ? "\n\n" + $("#description").val() : "") + "\n\nSize On Label: " +
+		getSizeOnLabel() + "\nRecommended Size: " + getRecommendedSize() + getFlaws() + "\n\nBrand: " +
+		getBrand() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
 	el.text(desc);
+}
+
+function getBrand(){
+	return $("#brand").val() ? $("#brand").val() : $("#title-brand").val();
 }
 
 function getTitle() {
@@ -167,9 +171,9 @@ function getSizeOnLabel() {
 	return labelSize;
 }
 
-function getEra(){
-	return $("input#era").val();
-}
+// function getEra(){
+// 	return $("input#era").val();
+// }
 
 function getMeasurements() {
 	var m1Inputs = $("#measurement1-input-group input");
@@ -197,11 +201,11 @@ function getFlaws(){
 	var flaw = $("#flaws").val();
 
 	if(flawType !== "none") { flawString += flawType + " "; }
-	if(flaw !== "") { 
+	if(flaw !== "") {
 		flawString += flaw;
-		if($("#flaws-append-text").prop('checked') === true) flawString += ", please check additional picture(s) for more info"; 
+		if($("#flaws-append-text").prop('checked') === true) flawString += ", please check additional picture(s) for more info";
 	}
-	
+
 	if (flawString !== "") {
 		flawString = flawString.charAt(0).toUpperCase() + flawString.slice(1).toLowerCase();
 		flawString = "\n*" + flawString;

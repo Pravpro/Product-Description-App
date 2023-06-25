@@ -1,405 +1,523 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Bootstrap, then Fontawesome, then Custom CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/fontawesome/all.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/ProdDescGenerator.css">
+    <!-- Bootstrap, then Fontawesome, then Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/ProdDescGenerator.css">
 
-	<title>Vibn Product Description Generator</title>
+    <title>Vibn Product Description Generator</title>
 </head>
 <body>
-	<div class="container-md position-relative pb-5 pb-xl-2">
-		<h1 class="d-lg-none font-weight-light text-center">Product Description Generator</h1>
-		<h1 class="d-none d-lg-block display-4 text-center">Product Description Generator</h1>
-		<div class="row justify-content-center my-2" id="type-selection">
-			<button tabindex="-1" id="clear-btn" type="button" class="btn btn-outline-danger btn-sm mt-1">Clear Form</button>
-			<div class="btn-group btn-group-toggle" data-toggle="buttons">
-				<label class="btn btn-secondary active">
-					<input type="radio" name="type-selection" value="tops" checked> Tops
-				</label>
-				<label class="btn btn-secondary">
-					<input type="radio" name="type-selection" value="jeans"> Jeans
-				</label>
-				<label class="btn btn-secondary">
-					<input type="radio" name="type-selection" value="shorts"> Shorts
-				</label>
-				<label class="btn btn-secondary">
-					<input type="radio" name="type-selection" value="bottoms"> Other Bottoms
-				</label>
-			</div>
-		</div>
+    <div class="container-md position-relative pb-5 pb-xl-2">
+        <h1 class="d-lg-none font-weight-light text-center">Product Description Generator</h1>
+        <h1 class="d-none d-lg-block display-4 text-center">Product Description Generator</h1>
+        <div class="row justify-content-center my-2" id="type-selection">
+            <button tabindex="-1" id="clear-btn" type="button" class="btn btn-outline-danger btn-sm mt-1">Clear Form</button>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="type-selection" value="tops" checked> Tops
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="type-selection" value="jeans"> Jeans
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="type-selection" value="shorts"> Shorts
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="type-selection" value="bottoms"> Other Bottoms
+                </label>
+            </div>
+        </div>
 
-		<section id="form">
-			<form>
-				<div class="form-row mb-3">
-					<div class="col-12 lead mb-1">Title:</div>	
-					<div id="title-group" class="col-12 title-input-group input-group">
-						<div class="input-group-prepend">
-							<div class="input-group-text">
-								<input type="checkbox" name="title" id="vintage">
-								<label class="mb-0 ml-1" for="vintage">Vintage</label>
-							</div>
-						</div>
-						<input type="text" class="form-control" placeholder="Text before brand">
-						<input id="brand" type="text" class="form-control" placeholder="Brand" list="brands">
-						<input type="text" class="form-control" placeholder="Type" list="types">
-					</div>
-					<datalist id="brands">
-						<option>Adidas</option>
-						<option>Carhartt</option>
-						<option>Champion</option>
-						<option>Chaps Ralph Lauren</option>
-						<option>Disney</option>
-						<option>Eddie Bauer</option>
-						<option>Fila</option>
-						<option>Guess</option>
-						<option>Harley Davidson</option>
-						<option>Jordan</option>
-						<option>L.L. Bean</option>
-						<option>Levis</option>
-						<option>Majestic</option>
-						<option>Marithe Francois Girbaud</option>
-						<option>MLB</option>
-						<option>Nautica</option>
-						<option>NBA</option>
-						<option>NFL</option>
-						<option>NHL</option>
-						<option>Nike</option>
-						<option>Patagonia</option>
-						<option>Pendleton</option>
-						<option>Polo Ralph Lauren</option>
-						<option>Pro Player</option>
-						<option>Puma</option>
-						<option>Reebok</option>
-						<option>Starter</option>
-						<option>The North Face</option>
-						<option>Tommy Hilfiger</option>
-						<option>Umbro</option>
-						<option>Woolrich</option>
-					</datalist>
-					<datalist id="types">
-						<option>1/2 Zip Jacket</option>
-						<option>1/2 Zip Windbreaker</option>
-						<option>1/4 Zip Fleece Sweatshirt</option>
-						<option>1/4 Zip Sweatshirt</option>
-						<option>1/4 Zip Windbreaker</option>
-						<option>Button-Down Shirt</option>
-						<option>Button-Up Shirt</option>
-						<option>Colorblock Windbreaker</option>
-						<option>Crewneck Sweatshirt</option>
-						<option>Denali Fleece Jacket</option>
-						<option>Fleece Jacket</option>
-						<option>Fleece Hoodie</option>
-						<option>Fleece Lined Jacket</option>
-						<option>Hoodie</option>
-						<option>Insulated Coat</option>
-						<option>Insulated Jacket</option>
-						<option>Insulated Vest</option>
-						<option>Jacket</option>
-						<option>Jersey</option>
-						<option>Lightweight Jacket</option>
-						<option>Pullover Hoodie</option>
-						<option>Pullover Sweatshirt</option>
-						<!-- <option>Pullover Windbreaker</option> -->
-						<option>Reverse Weave Pullover Sweatshirt</option>
-						<option>Reversible Fleece Hoodie</option>
-						<option>Reversible Fleece Jacket</option>
-						<option>Rugby Polo Shirt</option>
-						<option>Rugby Striped Polo Shirt</option>
-						<option>Shirt</option>
-						<option>Spell Out Pullover Windbreaker</option>
-						<option>Spell Out Track Jacket</option>
-						<option>Spell Out Windbreaker</option>
-						<option>Sweater</option>
-						<option>T-Shirt</option>
-						<option>Track Jacket</option>
-						<option>Track Pants</option>
-						<option>Vest</option>
-						<option>Windbreaker</option>
-					</datalist>
-				</div>
+        <section id="form">
+            <form>
+                <div id="title-group" class="form-row mb-3">
+                    <!-- <div class="col-1">
+                        <label for="title" class="lead mb-1">Title:</label>
+                    </div>
+                    <div class="col-12 col-lg-11">
+                        <input class="form-control" type="text" id="title" placeholder="Product Title">
+                    </div> -->
+                    <div class="col-12 lead mb-1">Title:</div>
+                    <div id="title-group" class="col-12 title-input-group input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input type="checkbox" name="title" id="vintage">
+                                <label class="mb-0 ml-1" for="vintage">Vintage</label>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Text before brand" list="before-brand">
+                        <input id="title-brand" type="text" class="form-control" placeholder="Brand" list="brands">
+                        <input type="text" class="form-control" placeholder="Type" list="types">
+                    </div>
+                    <datalist id="before-brand">
+                        <option>Adidas</option>
+                        <option>Champion</option>
+                        <option>Fila</option>
+                        <option>Nike</option>
+                        <option>Puma</option>
+                        <option>Reebok</option>
+                        <option>Starter</option>
+                    </datalist>
+                    <datalist id="types">
+                        <option>1/2 Zip Fleece Sweatshirt</option>
+                        <option>1/2 Zip Jacket</option>
+                        <option>1/2 Zip Windbreaker</option>
+                        <option>1/4 Zip Fleece Sweatshirt</option>
+                        <option>1/4 Zip Sweatshirt</option>
+                        <option>1/4 Zip Windbreaker</option>
+                        <option>700 Series Nuptse Puffer Jacket</option>
+                        <option>Bi-Swing Jacket</option>
+                        <option>Big Logo Insulated Jacket</option>
+                        <option>Big Logo Lightweight Jacket</option>
+                        <option>Big Logo Windbreaker</option>
+                        <option>Blanket Lined Denim Jacket</option>
+                        <option>Board Shorts</option>
+                        <option>Button-Down Shirt</option>
+                        <option>Button-Up Shirt</option>
+                        <option>Buttoned Shirt</option>
+                        <option>Chino Shorts</option>
+                        <option>Colorblock Windbreaker</option>
+                        <option>Couduroy Jeans</option>
+                        <option>Crewneck Sweatshirt</option>
+                        <option>Cuffed Sweatpants</option>
+                        <option>Cuffed Track Pants</option>
+                        <option>Denali Fleece Jacket</option>
+                        <option>Denim Jacket</option>
+                        <option>Denim Vest</option>
+                        <option>Fitted Hat</option>
+                        <option>Flannel Buttoned Shirt</option>
+                        <option>Flannel Shirt</option>
+                        <option>Fleece Hoodie</option>
+                        <option>Fleece Jacket</option>
+                        <option>Fleece Lined Jacket</option>
+                        <option>Fleece Lined Lightweight Jacket</option>
+                        <option>Fleece Sweatshirt</option>
+                        <option>Fleece Vest</option>
+                        <option>Half-Sleeve</option>
+                        <option>Half-Sleeve Buttoned Shirt</option>
+                        <option>Half-Sleeve Flannel Buttoned Shirt</option>
+                        <option>Hoodie</option>
+                        <option>Insulated Coat</option>
+                        <option>Insulated Jacket</option>
+                        <option>Insulated Vest</option>
+                        <option>Jacket</option>
+                        <option>Jeans</option>
+                        <option>Jersey</option>
+                        <option>Kappa</option>
+                        <option>Leather Jacket</option>
+                        <option>Lightweight Jacket</option>
+                        <option>Long-Sleeve</option>
+                        <option>Long-Sleeve Polo Shirt</option>
+                        <option>Long-Sleeve T-Shirt</option>
+                        <option>Mock Neck Sweatshirt</option>
+                        <option>Polo Shirt</option>
+                        <option>Puffer Jacket</option>
+                        <option>Pullover Hoodie</option>
+                        <option>Pullover Sweatshirt</option>
+                        <option>Racing Jacket</option>
+                        <option>Reverse Weave Crewneck Sweatshirt</option>
+                        <option>Reverse Weave Hoodie</option>
+                        <option>Reverse Weave Pullover Sweatshirt</option>
+                        <option>Reversible Fleece Hoodie</option>
+                        <option>Reversible Fleece Jacket</option>
+                        <option>Reversible Lightweight Jacket</option>
+                        <option>Rugby Polo Shirt</option>
+                        <option>Rugby Striped Polo Shirt</option>
+                        <option>Sherpa Lined Denim Jacket</option>
+                        <option>Shirt</option>
+                        <option>Shorts</option>
+                        <option>Sleeveless T-Shirt</option>
+                        <option>Snap-Back Hat</option>
+                        <option>Spell Out Pullover Windbreaker</option>
+                        <option>Spell Out Track Jacket</option>
+                        <option>Spell Out Windbreaker</option>
+                        <option>Strap-Back Hat</option>
+                        <option>Sweater</option>
+                        <option>Sweatpants</option>
+                        <option>Sweatshirt</option>
+                        <option>T-Shirt</option>
+                        <option>Tank Top</option>
+                        <option>Tearaway Track Pants</option>
+                        <option>Tonal Logo Cuffed Track Pants</option>
+                        <option>Tonal Logo Sweatpants</option>
+                        <option>Tonal Logo Track Pants</option>
+                        <option>Track Jacket</option>
+                        <option>Track Pants</option>
+                        <option>Vest</option>
+                        <option>V-Neck Sweatshirt</option>
+                        <option>Wind Shorts</option>
+                        <option>Wind Track Pants</option>
+                        <option>Windbreaker</option>
+                        <option>Zip-Away Track Pants</option>
+                        <option>Zip-Up Fleece Sweatshirt</option>
+                        <option>Zip-Up Hoodie</option>
+                        <option>Zip-Up Sweatshirt</option>
+                    </datalist>
+                </div>
 
-				<div class="form-row form-group">
-					<div class="col-1">
-						<label for="flaws" class="lead mb-1">Flaws:</label>
-					</div>
-					<div class="col-12 col-lg-11">
-						<div id="flaws-group" class="input-group">
-							<select id="flaw-type" class="custom-select">
-								<option selected value="none">Choose...</option>
-								<option>Very minor</option>
-								<option>Minor</option>
-							</select>
-							<input type="text" class="form-control" id="flaws" placeholder="The Flaw(s)" list="flaws-list">
-							<div class="input-group-append">
-								<div class="input-group-text">
-									<input type="checkbox" id="flaws-append-text" checked disabled>
-									<label class="overflow-hidden mb-0 ml-1" for="flaws-append-text">", please check additional picture(s) for more info"</label><span class="d-lg-none">...</span>
-								</div>
-							    <button id="flaws-reset" class="btn btn-outline-secondary" type="button"><i class="fas fa-sync"></i></button>
-							</div>
-						</div>
-						<datalist id="flaws-list">
-							<option>Color-bleeding present</option>
-							<option>Pinholes present</option>
-							<option>Signs of wear present</option>
-							<option>Signs of fading present</option>
-						</datalist>
-					</div>
-				</div>
+                <!-- Brand and Sku -->
+                <div class="form-row">
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="form-row">
+                            <div class="col-2">
+                                <label for="brand" class="lead mb-1">Brand:</label>
+                            </div>
+                            <div class="col-10 col-lg-8">
+                                <input class="form-control" type="text" id="brand" placeholder="Brand" list="brands">
+                            </div>
+                            <datalist id="brands">
+                                <option>Adidas</option>
+                                <option>B.U.M Equipment</option>
+                                <option>Burberry</option>
+                                <option>Calvin Klein</option>
+                                <option>Carhartt</option>
+                                <option>CFL</option>
+                                <option>Champion</option>
+                                <option>Chaps Ralph Lauren</option>
+                                <option>Christian Dior</option>
+                                <option>Columbia</option>
+                                <option>Diadora</option>
+                                <option>Disney</option>
+                                <option>Eddie Bauer</option>
+                                <option>Fila</option>
+                                <option>Fubu</option>
+                                <option>Guess</option>
+                                <option>Hard Rock Cafe</option>
+                                <option>Harley Davidson</option>
+                                <option>Jansport</option>
+                                <option>Jordan</option>
+                                <option>Kappa</option>
+                                <option>L.L. Bean</option>
+                                <option>Lacoste</option>
+                                <option>Lee</option>
+                                <option>Levis</option>
+                                <option>Lotto</option>
+                                <option>MLB</option>
+                                <option>Majestic</option>
+                                <option>Marithe Francois Girbaud</option>
+                                <option>Marlboro</option>
+                                <option>Music</option>
+                                <option>Nascar</option>
+                                <option>Nautica</option>
+                                <option>NBA</option>
+                                <option>NCAA</option>
+                                <option>NFL</option>
+                                <option>NHL</option>
+                                <option>Nike</option>
+                                <option>Patagonia</option>
+                                <option>Pendleton</option>
+                                <option>Planet Hollywood</option>
+                                <option>Polo Ralph Lauren</option>
+                                <option>Polo Sport</option>
+                                <option>Pro Player</option>
+                                <option>Puma</option>
+                                <option>Reebok</option>
+                                <option>Starter</option>
+                                <option>The North Face</option>
+                                <option>Tommy Hilfiger</option>
+                                <option>Umbro</option>
+                                <option>Woolrich</option>
+                                <option>Wrangler</option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <!-- <div class="col-12 col-lg-6 mb-3">
+                        <div class="form-row">
+                            <div class="col-2">
+                                <label for="era" class="lead mb-1">Era:</label>
+                            </div>
+                            <div class="col-10 col-lg-8">
+                                <input class="form-control" type="text" id="era" placeholder="The Era" list="eras-list">
+                            </div>
+                            <datalist id="eras-list">
+                                <option>1980s</option>
+                                <option>1990s</option>
+                                <option>2000s</option>
+                            </datalist>
+                        </div>
+                    </div> -->
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="form-row">
+                            <div class="col-2">
+                                <label for="sku" class="lead mb-1">SKU:</label>
+                            </div>
+                            <div class="col-10 col-lg-8">
+                                <input class="form-control" type="text" id="sku" placeholder="SKU number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="form-row">
-					<div class="col-12 col-lg-6 mb-3">
-						<div class="form-row">
-							<div class="col-2">
-								<label for="era" class="lead mb-1">Era:</label>
-							</div>
-							<div class="col-10 col-lg-8">
-								<input class="form-control" type="text" id="era" placeholder="The Era" list="eras-list">
-							</div>
-							<datalist id="eras-list">
-								<option>1980s</option>
-								<option>1990s</option>
-								<option>2000s</option>
-							</datalist>
-						</div>
-					</div>
-					<div class="col-12 col-lg-6 mb-3">
-						<div class="form-row">
-							<div class="col-2">
-								<label for="sku" class="lead mb-1">SKU:</label>
-							</div>
-							<div class="col-10 col-lg-8">
-								<input class="form-control" type="text" id="sku" placeholder="SKU number">
-							</div>	
-						</div>
-					</div>
-				</div>
+                <!-- Flaws input -->
+                <div class="form-row form-group">
+                    <div class="col-1">
+                        <label for="flaws" class="lead mb-1">Flaws:</label>
+                    </div>
+                    <div class="col-12 col-lg-11">
+                        <div id="flaws-group" class="input-group">
+                            <select id="flaw-type" class="custom-select">
+                                <option selected value="none">Choose...</option>
+                                <option>Very minor</option>
+                                <option>Minor</option>
+                                <option>Slight</option>
+                            </select>
+                            <input type="text" class="form-control" id="flaws" placeholder="The Flaw(s)" list="flaws-list">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <input type="checkbox" id="flaws-append-text" checked disabled>
+                                    <label class="overflow-hidden mb-0 ml-1" for="flaws-append-text">", please check additional picture(s) for more info"</label><span class="d-lg-none">...</span>
+                                </div>
+                                <button id="flaws-reset" class="btn btn-outline-secondary" type="button"><i class="fas fa-sync"></i></button>
+                            </div>
+                        </div>
+                        <datalist id="flaws-list">
+                            <option>Color-bleeding present</option>
+                            <option>Burn mark present</option>
+                            <option>Pinholes present</option>
+                            <option>Scratches present</option>
+                            <option>Signs of wear present</option>
+                            <option>Signs of fading present</option>
+                            <option>Tear present</option>
+                            <option>Zipper is broken</option>
+                        </datalist>
+                    </div>
+                </div>
 
-				<div class="form-row">
-					<div class="col-12 col-lg-5">
-						<div class="form-row">
-							<div class="col-12 col-lg-12 col-sm-8">
-								<section id="size-on-label-section">
-									<span class="lead mr-1">Size On Label:</span>
-									<div class="form-check form-check-inline">
-										(<input class="form-check-input ml-1" type="checkbox" id="no-label">
-										<label class="form-check-label mr-1" for="no-label">No label?</label>)
-									</div>
-									<div class="form-group mb-0">
-										<p class="d-inline pr-3"><strong>Gender:</strong></p>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-gender" type="radio" id="label-male" value="male">
-											<label class="form-check-label" for="label-male">Men's</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-gender" type="radio" id="label-female" value="female">
-											<label class="form-check-label" for="label-female">Women's</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-gender" type="radio" id="label-youth" value="youth">
-											<label class="form-check-label" for="label-youth">Youth's</label>
-										</div>
-									</div>
-									<div class="form-group mb-0">
-										<p class="d-inline pr-3"><strong>Size:</strong></p>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-size" type="radio" id="label-xs" value="xs">
-											<label class="form-check-label" for="label-xs">XS</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-size" type="radio" id="label-s" value="s">
-											<label class="form-check-label" for="label-s">S</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-size" type="radio" id="label-m" value="m">
-											<label class="form-check-label" for="label-m">M</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-size" type="radio" id="label-l" value="l">
-											<label class="form-check-label" for="label-l">L</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-size" type="radio" id="label-xl" value="xl">
-											<label class="form-check-label" for="label-xl">XL</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-size" type="radio" id="label-2xl" value="2xl">
-											<label class="form-check-label" for="label-2xl">2XL</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="label-size" type="radio" id="label-3xl" value="3xl">
-											<label class="form-check-label" for="label-3xl">3XL</label>
-										</div>
-									</div>
-									<div class="form-group d-flex">
-										<label for="label-extra" class="mr-3"><strong>Extra:</strong></label>
-										<div class="form-row">
-											<div class="col-6">
-												<input type="text" class="form-control form-control-sm" id="label-extra">
-											</div>
-										</div>
-									</div>
-								</section>
-								
-								<section id="recommended-size-section">
-									<span class="lead mr-1">Recommended Size:</span>
-									<div class="form-check form-check-inline">
-										(<input class="form-check-input ml-1" type="checkbox" id="same-size">
-										<label class="form-check-label mr-1" for="same-size">Same as label size?</label>)
-									</div>
-									<div class="form-group mb-0">
-										<p class="d-inline pr-3"><strong>Gender:</strong></p>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-gender" type="radio" id="recommended-male" value="male">
-											<label class="form-check-label" for="recommended-male">Men's</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-gender" type="radio" id="recommended-female" value="female">
-											<label class="form-check-label" for="recommended-female">Women's</label>
-										</div>
-									</div>
-									<div class="form-group mb-0">
-										<p class="d-inline pr-3"><strong>Size:</strong></p>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-xs" value="xs">
-											<label class="form-check-label" for="recommended-xs">XS</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-s" value="s">
-											<label class="form-check-label" for="recommended-s">S</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-m" value="m">
-											<label class="form-check-label" for="recommended-m">M</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-l" value="l">
-											<label class="form-check-label" for="recommended-l">L</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-xl" value="xl">
-											<label class="form-check-label" for="recommended-xl">XL</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-2xl" value="2xl">
-											<label class="form-check-label" for="recommended-2xl">2XL</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" name="recommended-size" type="radio" id="recommended-3xl" value="3xl">
-											<label class="form-check-label" for="recommended-3xl">3XL</label>
-										</div>
-									</div>
-									<div class="form-group d-flex">
-										<label for="recommended-extra" class="mr-3"><strong>Extra:</strong></label>
-										<div class="form-row">
-											<div class="col-6">
-												<input type="text" class="form-control form-control-sm" id="recommended-extra">
-											</div>
-										</div>
-									</div>
-								</section>
-							</div>
-							
-							<div class="col-12 col-lg-12 col-sm-4">
-								<div class="form-row">
-									<div class="col-6 col-lg-7 col-sm-12 pr-4">
-										<div class="lead mb-1">Measurements:</div>
-										<div id="measurement1-input-group" class="form-row mb-2">
-											<label class="col-5 col-xl-4"><strong>Pit-to-Pit:</strong></label>
-											<div class="col-5">
-												<div class="input-group input-group-sm">
-													<input type="number" class="form-control">
-													<div class="input-group-append">
-													    <span class="input-group-text">"</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div id="measurement2-input-group" class="form-row mb-2">
-											<label class="col-5 col-xl-4" for="measurement2"><strong>Length:</strong></label>
-											<div class="col-5">
-												<div class="input-group input-group-sm">
-													<input id="measurement2" type="number" class="form-control">
-													<div class="input-group-append">
-													    <span class="input-group-text">"</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div id="measurement3-input-group" class="form-row mb-2 d-none">
-											<label class="col-5 col-xl-4" for="measurement3"><strong>Rise:</strong></label>
-											<div class="col-5">
-												<div class="input-group input-group-sm">
-													<input id="measurement3" type="number" class="form-control">
-													<div class="input-group-append">
-													    <span class="input-group-text">"</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div id="measurement4-input-group" class="form-row mb-lg-0 d-none">
-											<label class="col-5 col-xl-4" for="measurement4"><strong>Thigh:</strong></label>
-											<div class="col-5">
-												<div class="input-group input-group-sm">
-													<input id="measurement4" type="number" class="form-control">
-													<div class="input-group-append">
-													    <span class="input-group-text">"</span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+                <div class="form-row">
+                    <div class="col-12 col-lg-5">
+                        <div class="form-row">
+                            <div class="col-12 col-lg-12 col-sm-8">
 
-									<div class="col-4 col-sm-9 col-md-8 col-lg-5">
-										<label for="price" class="lead mb-1">Price:</label>
-										<div class="form-row">
-											<div class="input-group input-group-sm col-10 col-xl-9">
-												<div class="input-group-prepend">
-												    <span class="input-group-text">$</span>
-												</div>
-												<input id="price" type="number" class="form-control">
-												<div class="input-group-append">
-												    <span class="input-group-text">.00</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+                                <section id="size-on-label-section">
+                                    <span class="lead mr-1">Size On Label:</span>
+                                    <div class="form-check form-check-inline">
+                                        (<input class="form-check-input ml-1" type="checkbox" id="no-label">
+                                        <label class="form-check-label mr-1" for="no-label">No label?</label>)
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <p class="d-inline pr-3"><strong>Gender:</strong></p>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-gender" type="radio" id="label-male" value="male">
+                                            <label class="form-check-label" for="label-male">Men's</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-gender" type="radio" id="label-female" value="female">
+                                            <label class="form-check-label" for="label-female">Women's</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-gender" type="radio" id="label-youth" value="youth">
+                                            <label class="form-check-label" for="label-youth">Youth's</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <p class="d-inline pr-3"><strong>Size:</strong></p>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-size" type="radio" id="label-xs" value="xs">
+                                            <label class="form-check-label" for="label-xs">XS</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-size" type="radio" id="label-s" value="s">
+                                            <label class="form-check-label" for="label-s">S</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-size" type="radio" id="label-m" value="m">
+                                            <label class="form-check-label" for="label-m">M</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-size" type="radio" id="label-l" value="l">
+                                            <label class="form-check-label" for="label-l">L</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-size" type="radio" id="label-xl" value="xl">
+                                            <label class="form-check-label" for="label-xl">XL</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-size" type="radio" id="label-2xl" value="2xl">
+                                            <label class="form-check-label" for="label-2xl">2XL</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="label-size" type="radio" id="label-3xl" value="3xl">
+                                            <label class="form-check-label" for="label-3xl">3XL</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex">
+                                        <label for="label-extra" class="mr-3"><strong>Extra:</strong></label>
+                                        <div class="form-row">
+                                            <div class="col-6">
+                                                <input type="text" class="form-control form-control-sm" id="label-extra">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
 
-						</div>
-					</div>
+                                <section id="recommended-size-section">
+                                    <span class="lead mr-1">Recommended Size:</span>
+                                    <div class="form-check form-check-inline">
+                                        (<input class="form-check-input ml-1" type="checkbox" id="same-size">
+                                        <label class="form-check-label mr-1" for="same-size">Same as label size?</label>)
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <p class="d-inline pr-3"><strong>Gender:</strong></p>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-gender" type="radio" id="recommended-male" value="male">
+                                            <label class="form-check-label" for="recommended-male">Men's</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-gender" type="radio" id="recommended-female" value="female">
+                                            <label class="form-check-label" for="recommended-female">Women's</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <p class="d-inline pr-3"><strong>Size:</strong></p>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-size" type="radio" id="recommended-xs" value="xs">
+                                            <label class="form-check-label" for="recommended-xs">XS</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-size" type="radio" id="recommended-s" value="s">
+                                            <label class="form-check-label" for="recommended-s">S</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-size" type="radio" id="recommended-m" value="m">
+                                            <label class="form-check-label" for="recommended-m">M</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-size" type="radio" id="recommended-l" value="l">
+                                            <label class="form-check-label" for="recommended-l">L</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-size" type="radio" id="recommended-xl" value="xl">
+                                            <label class="form-check-label" for="recommended-xl">XL</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-size" type="radio" id="recommended-2xl" value="2xl">
+                                            <label class="form-check-label" for="recommended-2xl">2XL</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="recommended-size" type="radio" id="recommended-3xl" value="3xl">
+                                            <label class="form-check-label" for="recommended-3xl">3XL</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex">
+                                        <label for="recommended-extra" class="mr-3"><strong>Extra:</strong></label>
+                                        <div class="form-row">
+                                            <div class="col-6">
+                                                <input type="text" class="form-control form-control-sm" id="recommended-extra">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
 
-					<div class="col-12 col-lg-7">
-						<div class="form-row d-flex align-content-end mt-2 h-100">
-							<div class="col-3 col-sm-2 d-flex justify-content-sm-end mb-1">
-								<button id="generate-btn" type="button" class="btn btn-primary align-self-baseline">Generate</button>
-							</div>
-							<div class="col-sm-10">
-								<div class="form-group">
-									<button id="copy-btn" class="btn btn-outline-primary btn-sm" type="button" data-toggle="popover" data-placement="top" data-content="Copy to clipboard" data-trigger="hover"><i class="far fa-copy"></i></button>
-									<textarea class="form-control" rows="16" placeholder="Where the generated text will show up"></textarea>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                                <section id="chatGPT-description">
+                                    <label for="description" class="lead form-label">ChatGPT Description</label>
+                                    <textarea class="form-control" id="description" rows="5"></textarea>
+                                </section>
+                            </div>
 
-			</form>
-		</section>
-	</div>
+                            <div class="col-12 col-lg-12 col-sm-4">
+                                <div class="form-row">
+                                    <!-- <div class="col-6 col-lg-7 col-sm-12 pr-4">
+                                        <div class="lead mb-1">Measurements:</div>
+                                        <div id="measurement1-input-group" class="form-row mb-2">
+                                            <label class="col-5 col-xl-4"><strong>Pit-to-Pit:</strong></label>
+                                            <div class="col-5">
+                                                <div class="input-group input-group-sm">
+                                                    <input type="number" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">"</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="measurement2-input-group" class="form-row mb-2">
+                                            <label class="col-5 col-xl-4" for="measurement2"><strong>Length:</strong></label>
+                                            <div class="col-5">
+                                                <div class="input-group input-group-sm">
+                                                    <input id="measurement2" type="number" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">"</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="measurement3-input-group" class="form-row mb-2 d-none">
+                                            <label class="col-5 col-xl-4" for="measurement3"><strong>Rise:</strong></label>
+                                            <div class="col-5">
+                                                <div class="input-group input-group-sm">
+                                                    <input id="measurement3" type="number" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">"</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="measurement4-input-group" class="form-row mb-lg-0 d-none">
+                                            <label class="col-5 col-xl-4" for="measurement4"><strong>Thigh:</strong></label>
+                                            <div class="col-5">
+                                                <div class="input-group input-group-sm">
+                                                    <input id="measurement4" type="number" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">"</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
 
 
-	<!-- jQuery, then Custom JS, then Popper.js, then Bootstrap JS -->
-	<script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/ProdDescGenerator.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-7">
+                        <div class="form-row mb-3 ml-2">
+                            <div class="col-4 col-sm-9 col-md-8 col-lg-5">
+                                <label for="price" class="lead mb-1">Price:</label>
+                                <div class="form-row">
+                                    <div class="input-group input-group-sm col-10 col-xl-9">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input id="price" type="number" class="form-control">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-row d-flex align-content-end mt-2 h-100"> -->
+                        <div class="form-row mt-2 h-100">
+                            <div class="col-3 col-sm-2 d-flex justify-content-sm-end mb-1">
+                                <button id="generate-btn" type="button" class="btn btn-primary align-self-baseline">Generate</button>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <button id="copy-btn" class="btn btn-outline-primary btn-sm" type="button" data-toggle="popover" data-placement="top" data-content="Copy to clipboard" data-trigger="hover"><i class="far fa-copy"></i></button>
+                                    <textarea id="generate-text" class="form-control" rows="16" placeholder="Where the generated text will show up"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+    </div>
+
+
+    <!-- jQuery, then Custom JS, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/ProdDescGenerator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
