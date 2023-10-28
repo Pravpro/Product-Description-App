@@ -414,80 +414,81 @@
                                     </div>
                                 </section>
 
-                                <section id="chatGPT-description">
+                                <!-- <section id="chatGPT-description">
                                     <label for="description" class="lead form-label">ChatGPT Description</label>
                                     <textarea class="form-control" id="description" rows="5"></textarea>
-                                </section>
+                                </section> -->
+                            </div>
+                            
+                            <div class="form-row mb-3">
+                                <div class="col-sm-7">
+                                    <div class="lead mb-1">Measurements:</div>
+                                    <div id="measurement1-input-group" class="form-row mb-2">
+                                        <label class="col-5 col-xl-4"><strong>Pit-to-Pit:</strong></label>
+                                        <div class="col-5">
+                                            <div class="input-group input-group-sm">
+                                                <input type="number" class="form-control">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">"</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="measurement2-input-group" class="form-row mb-2">
+                                        <label class="col-5 col-xl-4" for="measurement2"><strong>Length:</strong></label>
+                                        <div class="col-5">
+                                            <div class="input-group input-group-sm">
+                                                <input id="measurement2" type="number" class="form-control">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">"</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="measurement3-input-group" class="form-row mb-2 d-none">
+                                        <label class="col-5 col-xl-4" for="measurement3"><strong>Rise:</strong></label>
+                                        <div class="col-5">
+                                            <div class="input-group input-group-sm">
+                                                <input id="measurement3" type="number" class="form-control">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">"</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="measurement4-input-group" class="form-row mb-lg-0 d-none">
+                                        <label class="col-5 col-xl-4" for="measurement4"><strong>Thigh:</strong></label>
+                                        <div class="col-5">
+                                            <div class="input-group input-group-sm">
+                                                <input id="measurement4" type="number" class="form-control">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">"</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-5">
+                                    <label for="price" class="lead mb-1">Price:</label>
+                                    <div class="form-row">
+                                        <div class="input-group input-group-sm col-10 col-xl-9">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input id="price" type="number" class="form-control">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
                     </div>
 
                     <div class="col-12 col-lg-7">
-                        <div class="form-row mb-3 ml-2">
-                            <div class="col-6 col-lg-7 col-sm-12 pr-4">
-                                <div class="lead mb-1">Measurements:</div>
-                                <div id="measurement1-input-group" class="form-row mb-2">
-                                    <label class="col-5 col-xl-4"><strong>Pit-to-Pit:</strong></label>
-                                    <div class="col-5">
-                                        <div class="input-group input-group-sm">
-                                            <input type="number" class="form-control">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">"</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="measurement2-input-group" class="form-row mb-2">
-                                    <label class="col-5 col-xl-4" for="measurement2"><strong>Length:</strong></label>
-                                    <div class="col-5">
-                                        <div class="input-group input-group-sm">
-                                            <input id="measurement2" type="number" class="form-control">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">"</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="measurement3-input-group" class="form-row mb-2 d-none">
-                                    <label class="col-5 col-xl-4" for="measurement3"><strong>Rise:</strong></label>
-                                    <div class="col-5">
-                                        <div class="input-group input-group-sm">
-                                            <input id="measurement3" type="number" class="form-control">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">"</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="measurement4-input-group" class="form-row mb-lg-0 d-none">
-                                    <label class="col-5 col-xl-4" for="measurement4"><strong>Thigh:</strong></label>
-                                    <div class="col-5">
-                                        <div class="input-group input-group-sm">
-                                            <input id="measurement4" type="number" class="form-control">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">"</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-4 col-sm-9 col-md-8 col-lg-5">
-                                <label for="price" class="lead mb-1">Price:</label>
-                                <div class="form-row">
-                                    <div class="input-group input-group-sm col-10 col-xl-9">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">$</span>
-                                        </div>
-                                        <input id="price" type="number" class="form-control">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- <div class="form-row d-flex align-content-end mt-2 h-100"> -->
                         <div class="form-row mt-2 h-100">
                             <div class="col-3 col-sm-2 d-flex justify-content-sm-end mb-1">
