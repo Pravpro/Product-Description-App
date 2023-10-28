@@ -102,21 +102,21 @@ function setForm() {
 	var m1inputSection = m1Section.find('>div');
 
 	var radioValue = $("input[name='type-selection']:checked").val();
-	if (radioValue === "bottoms") {
-		m1label.html("<strong>Waist:</strong>");
-		m1label.toggleClass('col-3 col-xl-4 col-5');
-		m1inputSection.toggleClass('col-5 col-4');
-		m1Section.append('-' + '<div class="col-4">' + m1inputSection.html() + '</div>');
-	}
-	if (radioValue === "jeans" || radioValue === "shorts") {
+	// if (radioValue === "bottoms") {
+	// 	m1label.html("<strong>Waist:</strong>");
+	// 	m1label.toggleClass('col-3 col-xl-4 col-5');
+	// 	m1inputSection.toggleClass('col-5 col-4');
+	// 	m1Section.append('-' + '<div class="col-4">' + m1inputSection.html() + '</div>');
+	// }
+	if (radioValue === "jeans" || radioValue === "shorts" || radioValue === "bottoms") {
 		m1label.html("<strong>Waist:</strong>")
-		if(radioValue === "shorts") {
+		if(radioValue === "shorts" || radioValue === "bottoms") {
 			m1label.toggleClass('col-3 col-xl-4 col-5');
 			m1inputSection.toggleClass('col-5 col-4');
 			m1Section.append('-' + '<div class="col-4">' + m1inputSection.html() + '</div>');
 		}
 		$("#measurement2-input-group label").html("<strong>Inseam:</strong>");
-		$("#measurement3-input-group").toggleClass('d-none');
+		if (radioValue === "shorts" || radioValue === "jeans") $("#measurement3-input-group").toggleClass('d-none');
 		if (radioValue === "jeans") $("#measurement4-input-group").toggleClass('d-none');
 	}
 	// Activate popovers
@@ -125,8 +125,8 @@ function setForm() {
 
 function generateDescription(el) {
 	var desc = "Title:" + getTitle() + ($("#description").val() ? "\n\n" + $("#description").val() : "") + "\n\nSize On Label: " +
-		getSizeOnLabel() + "\nRecommended Size: " + getRecommendedSize() + getFlaws() + "\n\nBrand: " +
-		getBrand() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
+		getSizeOnLabel() + "\nRecommended Size: " + getRecommendedSize() + "\n\nMeasurements:\n" + getMeasurements() +
+		getFlaws() + "\n\nBrand: " + getBrand() + "\n\nPrice: $" + $("#price").val() + "\nSKU: " + getSku();
 	el.text(desc);
 }
 
